@@ -20,6 +20,18 @@ Levante la api
 $ go run main.go serve
 ```
 
+Compruebe el funcionamiento pinchando en elndpoint de ejemplo (por defecto el puerto inicial es el 3000, lo que puede ser cambiado en *internal/config/config.go*)
+
+```bash
+$ curl --location --request GET 'http://localhost:3000/v1/ping'
+```
+
+Debería ver la siguiente respuesta:
+
+```json
+{"code":200,"msg":"Bienvenido a la plantilla minimal Chi de Gophers Latam"}
+```
+
 ## Api
 
 En el paquete *api/v1*, en el archivo *routes.go puede registrar las rutas de su aplicación, escribiendo los handlers en *api/v1/handlers* según los vaya necesitando.
