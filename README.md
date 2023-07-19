@@ -44,6 +44,7 @@ Se incluyen los manejadores para poder revisar stats de la api como el consumo d
 
 Si desea desactivar esta feature, solo comente las líneas donde se le referencia en el archivo *api/v1/routes.go* y ejecute `$ go mod tidy`.
 
+![image](https://github.com/gophers-latam/minimalchi/assets/20423399/855d1ae3-4836-4507-ae3a-73b8ede4ced6)
 
 
 ## Configuración
