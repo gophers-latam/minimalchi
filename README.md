@@ -2,7 +2,7 @@
 
 Un template mínimo recargado con el router [Chi](https://go-chi.io/#/) para ser usado como base para construir apis REST.
 
-Minimal Chi no intenta decidir por ud. que clase de proyecto realizar ni que dependencias importar. Ofrece simplemente una estructura de directorios base, componible y expandible para ser usada en cualquier proyecto, manteniendo algunos elementos idiomáticos. 
+Minimal Chi no intenta decidir por ud. que clase de proyecto realizar ni que dependencias importar. Ofrece simplemente una estructura de directorios base, componible y expandible para ser usada en cualquier proyecto api REST, manteniendo algunos elementos idiomáticos, con el agregado del router chi. 
 
 
 ## Prueba rápida
