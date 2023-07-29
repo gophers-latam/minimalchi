@@ -36,7 +36,6 @@ func init() {
 // main
 // Obtiene el comando a ejecutar desde la línea de comandos y lo invoca
 func main() {
-	fmt.Printf("%s Version %s Build with Go %v at %v\n", provider.GetContainer().Config().APPName, BinVersion, BuildGoVersion, BuildTime)
 	command := selectCmds()
 	command()
 }
@@ -45,13 +44,15 @@ func main() {
 func selectCmds() func() {
 
 	if len(os.Args) == 1 {
-		fmt.Println(`Ud. debería ejecutar esta aplicación con un comando`)
+		fmt.Printf("Ud. debería ejecutar esta aplicación con un comando.\n\n")
 
 		return cmd.RunHelp
 	}
+
 	// os.Args = []string{"", "serve", "-config=./config_example.yml", "-port=4999", "-log=\"./b.b\"", "-development"}
 	switch c := os.Args[1]; c {
 	case "serve":
+		fmt.Printf("%s version %s Build with Go %v at %v\n", provider.GetContainer().Config().APPName, BinVersion, BuildGoVersion, BuildTime)
 		return cmd.RunServe
 	case "help":
 		return cmd.RunHelp

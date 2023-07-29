@@ -11,15 +11,20 @@ func RunHelp() {
 
 	fmt.Printf(`%s es la plantilla mínima para crear apis propuesta por la comunidad Gophers Latam usando al router chi.
 
-	Comandos:
+Comandos:
 
-	Serve.   Sirve esta api.
-	$ %s serve
+serve - Corre esta API.
 
-	  Flags:
+Ejemplo
+$go run ./main.go serve
 
-         (psst! Ud. debería definir aquí sus flags si su aplicación los necesita)
+help - Muestra esta ayuda.
 
-	Help. Muestra esta ayuda.
-	$ cart Help.`, appName, appName)
+Ejemplo
+$go run ./main.go help
+
+Flags:
+
+(Ud. debería definir aquí sus flags si su aplicación los necesita)
+`, appName)
 }
