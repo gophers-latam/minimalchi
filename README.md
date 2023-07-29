@@ -10,14 +10,13 @@ Minimal Chi no intenta decidir por ud. que clase de proyecto realizar ni que dep
 Descargue el repositorio e instale las dependencias:
 
 ```bash
-$ go get -u
-$ go mod tidy
+$ make deps
 ```
 
 Levante la api
 
 ```bash
-$ go run main.go serve
+$ make run
 ```
 
 Compruebe el funcionamiento pinchando en elndpoint de ejemplo (por defecto el puerto inicial es el 3000, lo que puede ser cambiado en *internal/config/config.go*)
@@ -40,16 +39,16 @@ Puede revisar el endpoint de ejemplo `Ping` que se incluye.
 
 ## Visualización de stats
 
-Se incluyen los manejadores para poder revisar stats de la api como el consumo de memoria y otros usando el paquete [statsviz](https://github.com/arl/statsviz). Con su aplicación ejecutandose, solo dirijase en su navegador favorito a http://localhost:puerto/debug/statsviz.
+Se incluyen los manejadores para poder revisar stats de la api como el consumo de memoria y otros usando el paquete [statsviz](https://github.com/arl/statsviz). Con su aplicación ejecutandose, solo dirijase en su navegador favorito a http://localhost:3000/debug/statsviz.
 
-Si desea desactivar esta feature, solo comente las líneas donde se le referencia en el archivo *api/v1/routes.go* y ejecute `$ go mod tidy`.
+Si desea desactivar esta feature, solo comente las líneas donde se le referencia en el archivo *api/v1/routes.go* y ejecute `$ make deps`.
 
 ![image](https://github.com/gophers-latam/minimalchi/assets/20423399/855d1ae3-4836-4507-ae3a-73b8ede4ced6)
 
 
 ## Configuración
 
-En el paquete internal/config puede, si gusta, agregar campos al struct `Conf` para cargar las configuraciones de su aplicación, usando la función `NewConf`. 
+En el paquete internal/config puede, si gusta, agregar campos al struct `Conf` para cargar las configuraciones de su aplicación, usando la función `NewConf`.
 
 ```Go
 // Conf contiene los datos de configuración de la api.
@@ -65,4 +64,3 @@ type Conf struct {
 ```
 
 De esta forma ud. decide si cargarlas desde un archivo, desde la línea de comandos o desde otros medios.
-

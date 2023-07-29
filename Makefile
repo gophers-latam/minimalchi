@@ -14,13 +14,18 @@ LDFLAGS=-ldflags "-w -s \
 "
 
 d:
-	env GIT_TERMINAL_PROMPT=1 go get -u
+	env GIT_TERMINAL_PROMPT=1 go get
 
 t:
 	env GIT_TERMINAL_PROMPT=1 go mod tidy
 
 test:
 	go test ./... -v
+
+deps: d t
+
+run:
+	go run main.go serve
 
 compile:
 	CGO_ENABLED=0 go build -o releases/linux/${BINARY}${Version} ${LDFLAGS}
