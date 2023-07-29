@@ -56,7 +56,7 @@ En el paquete internal/config puede, si gusta, agregar campos al struct `Conf` p
 // Implemente los campos que su aplicación necesite y defina un medio para obtener
 // esos datos, ya sea cargandolos desde un archivo o desde flags de la línea de comandos.
 type Conf struct {
-	// AppName contiene el nombre de su aplicación
+	// APPName contiene el nombre de su aplicación
 	APPName string `json:"appName" yaml:"app_name"`
 
 	// Port infica en que puerto poner a escuchar a esta api
