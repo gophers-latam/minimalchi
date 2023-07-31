@@ -3,14 +3,11 @@ BINARY=minimalchi
 Version=`git tag -l | tail -1`
 GitStatus=`git status -s`
 BuildTime=`date +%FT%T%z`
-BuildGoVersion=`go version`
-
 
 LDFLAGS=-ldflags "-w -s \
 -X 'main.BinVersion=${Version}' \
 -X 'main.GitStatus=${GitStatus}' \
 -X 'main.BuildTime=${BuildTime}' \
--X 'main.BuildGoVersion=${BuildGoVersion}' \
 "
 
 d:
@@ -28,7 +25,7 @@ run:
 	go run main.go serve
 
 compile:
-	CGO_ENABLED=0 go build -o releases/linux/${BINARY}${Version} ${LDFLAGS}
+	CGO_ENABLED=0 go build -o releases/linux/${BINARY}'-'${Version} ${LDFLAGS}
 
 clean:
 	if [ -f releases/linux/${BINARY}${Version} ] ; then rm releases/linux/${BINARY}${Version}; fi
